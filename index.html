@@ -1,0 +1,2037 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Graeme's World English | 福岡の少人数制英会話スクール</title>
+    <meta
+      name="description"
+      content="福岡市早良区の少人数制英会話スクール。講師歴19年のグレイアムが、楽しく学べる環境を提供します。無料体験レッスン受付中。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Raleway:wght@300;400;600&display=swap"
+    />
+    <style>
+      :root {
+        --seal: #a12b1f;
+        --paper: #faf6f3;
+        --ink: #1b1b1b;
+        --serif:
+          "EB Garamond", "Cormorant Garamond", "Hiragino Mincho ProN",
+          "Yu Mincho", "Noto Serif JP", Georgia, serif;
+        --sans:
+          "Raleway", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
+          system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 84px;
+      }
+      body {
+        font-family: var(--sans);
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.85;
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 3px solid #2b54c4;
+        outline-offset: 3px;
+      }
+      body[data-lang="ja"] .en,
+      body[data-lang="en"] .ja {
+        display: none;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: 0.01em;
+      }
+      .sprite {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+
+      /* header */
+      .top {
+        position: sticky;
+        top: 0;
+        z-index: 90;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        background: #fff;
+        padding: calc(0.55rem + env(safe-area-inset-top, 0px)) 1rem 0.55rem;
+        border-bottom: 1px solid #ece7e3;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        text-decoration: none;
+        min-width: 0;
+      }
+      .seal {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex: none;
+        width: 52px;
+        height: 52px;
+        background: var(--seal);
+        color: #fff;
+        border-radius: 3px;
+        padding: 4px;
+        font-family: var(--serif);
+        font-size: 1.3rem;
+        line-height: 1;
+        font-weight: 700;
+        place-items: center;
+      }
+      .wm {
+        display: block;
+        font-family: var(--serif);
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+      .wm small {
+        display: none;
+        font-size: 1rem;
+        margin-left: 0.3em;
+      }
+      .sub {
+        display: block;
+        font-family: var(--serif);
+        font-size: 0.88rem;
+        line-height: 1.3;
+      }
+      .burger {
+        flex: none;
+        background: none;
+        border: 0;
+        width: 46px;
+        height: 46px;
+        display: grid;
+        gap: 7px;
+        align-content: center;
+        justify-items: end;
+        cursor: pointer;
+      }
+      .burger i {
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: var(--ink);
+      }
+      .dnav {
+        display: none;
+      }
+      .langbtn {
+        font-family: var(--serif);
+        font-size: 1rem;
+        cursor: pointer;
+        background: none;
+        color: inherit;
+        border: 1px solid currentColor;
+        border-radius: 99px;
+        padding: 0.15rem 0.95rem;
+        min-height: 40px;
+      }
+      @media (min-width: 440px) {
+        .wm {
+          font-size: 1.5rem;
+        }
+        .wm small {
+          display: inline;
+        }
+        .sub {
+          font-size: 0.95rem;
+        }
+      }
+      @media (min-width: 1000px) {
+        .dnav {
+          display: flex;
+          align-items: center;
+          gap: 1.3rem;
+          font-family: var(--serif);
+          font-size: 1.1rem;
+        }
+        .dnav a {
+          text-decoration: none;
+        }
+        .dnav a:hover {
+          color: var(--seal);
+        }
+        .burger {
+          display: none;
+        }
+      }
+
+      /* menu overlay */
+      .menu {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        background: linear-gradient(
+          180deg,
+          #8db4dc 0%,
+          #c9d8e8 48%,
+          #f0dfcb 100%
+        );
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: calc(1rem + env(safe-area-inset-top, 0px)) 1.6rem 2rem;
+        overflow-y: auto;
+      }
+      .menu.open {
+        display: flex;
+      }
+      .mclose {
+        background: none;
+        border: 0;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        margin-bottom: 0.8rem;
+      }
+      .mclose svg {
+        width: 34px;
+        height: 34px;
+        stroke: var(--ink);
+        stroke-width: 2.2;
+      }
+      .menu nav {
+        display: grid;
+        text-align: right;
+        font-family: var(--serif);
+        font-size: 1.75rem;
+      }
+      .menu nav a {
+        text-decoration: none;
+        padding: 0.5rem 0;
+        display: block;
+      }
+      .menu nav a.cur {
+        color: #2b54c4;
+      }
+      .menu .langbtn {
+        margin-top: 1.4rem;
+      }
+
+      /* hero */
+      .hero {
+        position: relative;
+        min-height: 72svh;
+        background:
+          linear-gradient(rgba(60, 100, 170, 0.3), rgba(0, 0, 0, 0.08)),
+          url(images/main.jpg) 50% 30% / cover #8fa8c9;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+      .hero p {
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 2;
+        letter-spacing: 0.03em;
+        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+      }
+      .hero .langbtn {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      @media (min-width: 900px) {
+        .hero {
+          min-height: 340px;
+          align-items: center;
+        }
+        .hero p {
+          font-size: 1.4rem;
+        }
+      }
+
+      /* band */
+      .band {
+        position: relative;
+        background: var(--paper);
+        text-align: center;
+        padding: 3.4rem 1.25rem 5.2rem;
+      }
+      .bin {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+      .band h1 {
+        font-size: clamp(1.8rem, 6.5vw, 2.7rem);
+      }
+      .band h2 {
+        font-size: clamp(1.5rem, 5.5vw, 2rem);
+        margin-top: 3rem;
+      }
+      .rule {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        width: 4.5rem;
+        margin: 1.1rem auto;
+      }
+      .promo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.1rem 0.9rem;
+        font-size: 1.05rem;
+        margin-top: 1.1rem;
+      }
+      .promo span + span::before {
+        content: "\2013";
+        margin-right: 0.9rem;
+      }
+      .band p + p {
+        margin-top: 0.8rem;
+      }
+      .btnrow {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.7rem;
+        margin-top: 1.6rem;
+      }
+      .obtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 54px;
+        padding: 0.6rem 1.6rem;
+        border: 1px solid var(--ink);
+        border-radius: 14px;
+        text-decoration: none;
+        font-size: 1.05rem;
+        background: transparent;
+        color: var(--ink);
+      }
+      .obtn.fill {
+        background: var(--ink);
+        color: #fff;
+        border-radius: 99px;
+      }
+      .exams {
+        background: #fff;
+        border: 1px solid #d8d0c9;
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+        margin: 1.6rem 0;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+      .tags span {
+        border: 1px solid var(--ink);
+        border-radius: 10px;
+        padding: 0.1rem 0.9rem;
+        font-size: 0.92rem;
+      }
+      .pines {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 7%;
+        pointer-events: none;
+        color: var(--ink);
+      }
+      .pines div {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.9rem;
+      }
+      .pn {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.4;
+      }
+      .pn.s {
+        width: 16px;
+        height: 30px;
+      }
+      .pn.m {
+        width: 22px;
+        height: 40px;
+      }
+      .pn.l {
+        width: 32px;
+        height: 56px;
+      }
+
+      /* dark photo sections */
+      .dark {
+        color: #fff;
+        padding: 4rem 1.25rem 4.5rem;
+      }
+      .d1 {
+        background:
+          linear-gradient(rgba(12, 8, 6, 0.72), rgba(12, 8, 6, 0.8)),
+          url(image1.png) center/cover #1a1410;
+      }
+      .d2 {
+        background:
+          linear-gradient(rgba(4, 28, 30, 0.72), rgba(4, 28, 30, 0.82)),
+          url(image1.png) center/cover #0b2a2c;
+      }
+      .d3 {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.72)),
+          url(image1.png) center/cover #111;
+      }
+      .in {
+        max-width: 1040px;
+        margin: 0 auto;
+      }
+      .dark h2 {
+        text-align: center;
+        font-size: clamp(1.9rem, 7vw, 2.8rem);
+      }
+      .dark hr {
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.55);
+        margin: 1rem auto 1.8rem;
+      }
+      .dark .in > p {
+        text-align: center;
+        max-width: 640px;
+        margin-inline: auto;
+        font-weight: 300;
+      }
+      .dark .in > p + p {
+        margin-top: 0.8rem;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 1.3rem 0 1.8rem;
+      }
+      .chips span {
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+        padding: 0.1rem 0.9rem;
+        font-size: 0.92rem;
+      }
+      .dark .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        max-width: 420px;
+        margin: 2rem auto 0;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 14px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.05rem;
+        font-weight: 300;
+        background: rgba(0, 0, 0, 0.15);
+      }
+
+      /* cards and rails */
+      .carwrap {
+        position: relative;
+        margin: 1.6rem -1.25rem 0;
+      }
+      .rail {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 1.25rem 1rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .rail::-webkit-scrollbar {
+        display: none;
+      }
+      .gcard {
+        flex: 0 0 80%;
+        max-width: 340px;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: var(--ink);
+        background: rgba(236, 233, 230, 0.88);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+      }
+      .gimg {
+        position: relative;
+        aspect-ratio: 4/3;
+        background: #9aa6b5;
+        overflow: hidden;
+      }
+      .gimg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .bk .gimg {
+        aspect-ratio: 4/5;
+      }
+      .st .gimg {
+        aspect-ratio: 1;
+      }
+      .play {
+        display: block;
+        position: relative;
+        height: 100%;
+      }
+      .thumb::after,
+      .play::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: rgba(161, 43, 31, 0.92);
+      }
+      .thumb::before,
+      .play::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        border-left: 17px solid #fff;
+        border-block: 11px solid transparent;
+        transform: translateX(3px);
+        z-index: 1;
+      }
+      .gtxt {
+        flex: 1;
+        padding: 1.3rem 1.1rem 1.6rem;
+        text-align: center;
+      }
+      .gtxt h3,
+      .gtxt b {
+        display: block;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+        color: var(--ink);
+      }
+      .gtxt p {
+        font-size: 0.92rem;
+        line-height: 1.75;
+      }
+      .gtxt p + p {
+        margin-top: 0.6rem;
+      }
+      .gtxt .role {
+        display: block;
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.05rem;
+        margin-bottom: 0.6rem;
+      }
+      .lvl {
+        display: inline-block;
+        border: 1px solid var(--ink);
+        border-radius: 99px;
+        padding: 0 0.7rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+      .meta {
+        margin-top: 0.6rem;
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 0.98rem;
+      }
+      .nx {
+        position: absolute;
+        right: 0.3rem;
+        top: 30%;
+        z-index: 5;
+        background: none;
+        border: 0;
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 200;
+        cursor: pointer;
+        width: 48px;
+        height: 64px;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+        line-height: 1;
+      }
+      @media (min-width: 900px) {
+        .carwrap {
+          margin: 2rem 0 0;
+        }
+        .rail {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.6rem;
+          overflow: visible;
+          padding: 0;
+        }
+        .rail.two {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .gcard {
+          max-width: none;
+        }
+        .nx {
+          display: none;
+        }
+      }
+
+      /* prices */
+      .pcols {
+        display: grid;
+        gap: 2.5rem;
+        margin-top: 1rem;
+      }
+      .pcols h3 {
+        text-align: center;
+        font-size: 1.7rem;
+        margin-bottom: 1.2rem;
+      }
+      .pcols h3:not(:first-child) {
+        margin-top: 2.2rem;
+      }
+      .plan {
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: 14px;
+        padding: 1.2rem 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.22);
+      }
+      .plan b {
+        display: block;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 1.35rem;
+      }
+      .plan small {
+        display: block;
+        font-weight: 300;
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .yen {
+        margin-top: 0.6rem;
+        font-family: var(--serif);
+        font-size: 2.1rem;
+      }
+      .yen small {
+        display: inline;
+        font-size: 0.9rem;
+      }
+      .notes {
+        list-style: none;
+        text-align: center;
+      }
+      .notes li {
+        padding: 0.7rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+        font-weight: 300;
+      }
+      .pfoot {
+        text-align: center;
+        font-size: 0.85rem;
+        font-weight: 300;
+        margin-top: 1.2rem;
+      }
+      @media (min-width: 900px) {
+        .pcols {
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+        }
+      }
+
+      /* photo CTA */
+      .cta {
+        min-height: 60svh;
+        display: grid;
+        place-items: center;
+        padding: 2rem 1.25rem;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+          url(image1.png) center/cover #2a1d14;
+      }
+      .cta .obtn {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.8);
+        background: rgba(0, 0, 0, 0.2);
+        font-weight: 300;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      /* footer / contact */
+      .sky {
+        position: relative;
+        background: linear-gradient(180deg, #b2c8e4, #dce3f0 70%, #e6e9f3);
+        text-align: center;
+        padding: 5rem 1.25rem 7rem;
+      }
+      .sky .pines {
+        top: 1.2rem;
+        bottom: auto;
+        align-items: flex-start;
+      }
+      .sky .in {
+        max-width: 620px;
+      }
+      .sky h2 {
+        font-size: clamp(1.8rem, 6.5vw, 2.6rem);
+      }
+      .sky .in > p {
+        margin-top: 0.8rem;
+      }
+      .contact {
+        display: grid;
+        gap: 0.7rem;
+        margin: 1.6rem 0;
+      }
+      .contact .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        border: 1.5px solid var(--ink);
+        border-radius: 99px;
+        text-decoration: none;
+        font-weight: 600;
+        background: rgba(255, 255, 255, 0.35);
+        word-break: break-all;
+        padding: 0.3rem 1rem;
+      }
+      .contact .btn.red {
+        background: var(--ink);
+        color: #fff;
+      }
+      .addr {
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+      }
+      .map {
+        border: 0;
+        width: 100%;
+        height: 280px;
+        border-radius: 12px;
+        margin-top: 1rem;
+        background: #c4cad6;
+      }
+      .fnav {
+        display: grid;
+        gap: 0.4rem;
+        font-family: var(--serif);
+        font-size: 1.4rem;
+        margin: 2.6rem 0 1.8rem;
+      }
+      .fnav a {
+        text-decoration: none;
+      }
+      .frow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.82rem;
+        text-align: center;
+      }
+      .frow .seal {
+        width: 56px;
+        height: 56px;
+      }
+      .ai {
+        display: grid;
+        justify-items: center;
+        text-decoration: none;
+        font-family: var(--serif);
+        font-size: 0.85rem;
+      }
+      .ai b {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #e0604f;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+      .sky .langbtn {
+        margin-top: 1.4rem;
+        border-color: var(--ink);
+      }
+      .copy {
+        margin-top: 1.4rem;
+        font-size: 0.82rem;
+      }
+      .copy a {
+        font-weight: 700;
+      }
+
+      .fab {
+        position: fixed;
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        z-index: 80;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: var(--seal);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      }
+      .fab svg {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+      }
+
+      #vmodal {
+        border: 0;
+        padding: 0;
+        background: #000;
+        border-radius: 6px;
+        width: min(94vw, 900px);
+        max-width: none;
+        margin: auto;
+        overflow: hidden;
+      }
+      #vmodal::backdrop {
+        background: rgba(10, 8, 6, 0.9);
+      }
+      #vmodal .top {
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+        background: #111;
+        padding: 0.4rem 0.6rem;
+        border: 0;
+      }
+      #vmodal .x {
+        min-width: 44px;
+        min-height: 44px;
+        border: 1px solid #fff;
+        border-radius: 99px;
+        background: none;
+        color: #fff;
+        font: inherit;
+        padding: 0 1.1rem;
+        cursor: pointer;
+      }
+      #vframe {
+        position: relative;
+        aspect-ratio: 16/9;
+        background: #000;
+      }
+      #vframe iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body data-lang="ja">
+    <svg class="sprite" aria-hidden="true">
+      <symbol id="pine" viewBox="0 0 24 40">
+        <path
+          d="M12 2v37M12 4l-5 7h10zM12 11l-7 9h14zM12 19l-9 11h18zM12 28l-11 11h22z"
+        />
+      </symbol>
+    </svg>
+
+    <header class="top" id="top">
+      <a class="brand" href="#top"
+        ><span class="seal" aria-hidden="true"
+          ><b>世</b><b>界</b><b>英</b><b>語</b></span
+        ><span
+          ><span class="wm">Graeme's World English<small>英会話</small></span
+          ><span class="sub"
+            ><span class="ja">福岡の英会話スクール</span
+            ><span class="en">English School in Jiromaru, Fukuoka</span></span
+          ></span
+        ></a
+      >
+      <nav class="dnav" aria-label="Main">
+        <a href="#top"
+          ><span class="ja">ホーム</span><span class="en">Home</span></a
+        ><a href="#about"
+          ><span class="ja">スクール紹介</span><span class="en">About</span></a
+        ><a href="#reasons"
+          ><span class="ja">選ばれる理由</span><span class="en">Why us</span></a
+        ><a href="#books"
+          ><span class="ja">教材</span><span class="en">Textbooks</span></a
+        ><a href="#prices"
+          ><span class="ja">レッスン料</span><span class="en">Prices</span></a
+        ><a href="#staff"
+          ><span class="ja">スタッフ</span><span class="en">Staff</span></a
+        ><a href="#videos"
+          ><span class="ja">ビデオ</span><span class="en">Videos</span></a
+        ><a href="#contact"
+          ><span class="ja">お問い合わせ</span
+          ><span class="en">Contact</span></a
+        ><button class="langbtn" type="button" aria-label="Switch language">
+          English
+        </button>
+      </nav>
+      <button
+        class="burger"
+        id="burger"
+        type="button"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <i></i><i></i><i></i>
+      </button>
+    </header>
+
+    <div class="menu" id="menu">
+      <button class="mclose" id="mclose" type="button" aria-label="Close">
+        <svg viewBox="0 0 34 34"><path d="M5 5l24 24M29 5L5 29" /></svg>
+      </button>
+      <nav aria-label="Menu">
+        <a href="#top"
+          ><span class="ja">ホーム</span><span class="en">Home</span></a
+        ><a href="#about"
+          ><span class="ja">スクール紹介</span><span class="en">About</span></a
+        ><a href="#reasons"
+          ><span class="ja">選ばれる理由</span><span class="en">Why us</span></a
+        ><a href="#books"
+          ><span class="ja">教材</span><span class="en">Textbooks</span></a
+        ><a href="#prices"
+          ><span class="ja">レッスン料</span><span class="en">Prices</span></a
+        ><a href="#staff"
+          ><span class="ja">スタッフ</span><span class="en">Staff</span></a
+        ><a href="#videos"
+          ><span class="ja">ビデオ</span><span class="en">Videos</span></a
+        ><a href="#contact"
+          ><span class="ja">お問い合わせ</span
+          ><span class="en">Contact</span></a
+        >
+      </nav>
+      <button class="langbtn" type="button" aria-label="Switch language">
+        English
+      </button>
+    </div>
+
+    <main>
+      <section class="hero">
+        <p>
+          <span class="ja"
+            >少人数制の英会話スクール<br />講師歴19年<br />無料体験レッスン受付中</span
+          ><span class="en"
+            >Small-class English school<br />Over 20 years of teaching in
+            Japan<br />Free trial lessons now open</span
+          >
+        </p>
+        <button class="langbtn" type="button" aria-label="Switch language">
+          English
+        </button>
+      </section>
+
+      <section class="band" id="about">
+        <div class="bin">
+          <h1>
+            <span class="ja">英語で、世界とつながる。</span
+            ><span class="en">Learn English. Connect with the world.</span>
+          </h1>
+          <hr class="rule" />
+          <p>
+            <span class="ja"
+              >福岡・早良区の少人数制英語・英会話スクール。リラックスして楽しく学べる環境です。</span
+            >
+            <span class="en"
+              >A small-class English school in Sawara Ward, Fukuoka. Relaxed,
+              fun and effective.</span
+            >
+          </p>
+          <div class="promo ja">
+            <span>新規生徒募集中</span><span>無料体験レッスン</span
+            ><span>入会金0円</span><span>入会初月レッスン料半額</span>
+          </div>
+          <div class="promo en">
+            <span>Now enrolling</span><span>Free trial lesson</span
+            ><span>No enrolment fee</span><span>Half price first month</span>
+          </div>
+          <div class="btnrow">
+            <a class="obtn fill" href="tel:09028554344"
+              ><span class="ja">無料体験を申し込む</span
+              ><span class="en">Book a free trial</span></a
+            ><a class="obtn" href="#prices"
+              ><span class="ja">レッスン料を見る</span
+              ><span class="en">See prices</span></a
+            >
+          </div>
+          <h2>
+            <span class="ja">スクール紹介</span
+            ><span class="en">About our school</span>
+          </h2>
+          <hr class="rule" />
+
+          <p class="ja">
+            Graeme's World
+            Englishは少人数制の英語・英会話スクールです。日本での講師歴19年のグレイアムが、リラックスして楽しく学べる環境をご提供します。読み書きはもちろん、コミュニケーションツールとしての英語を学びませんか？
+          </p>
+          <p class="en">
+            Graeme's World English is a small-class English school. Graeme, with
+            19 years of teaching experience in Japan, offers a relaxed and
+            enjoyable place to learn. Come and learn English as a real tool for
+            communication, not just reading and writing.
+          </p>
+          <p class="ja">
+            レッスンはグレイアムのオリジナル教材「Adventure Island」で行います。
+          </p>
+          <p class="en">
+            Lessons are taught with Graeme's own textbook series, Adventure
+            Island.
+          </p>
+          <div class="exams">
+            <p class="ja">
+              <b>試験対策もOK！</b
+              ><br />ケンブリッジ英語検定・英検・IELTS・TOEFL・TOEICに対応できます。
+            </p>
+            <p class="en">
+              <b>Exam preparation too!</b><br />Cambridge English, Eiken, IELTS,
+              TOEFL and TOEIC.
+            </p>
+          </div>
+          <div class="tags">
+            <span class="ja">進歩</span><span class="ja">楽しむ</span
+            ><span class="ja">追求</span
+            ><span class="ja">コミュニケーション</span
+            ><span class="ja">異文化理解</span
+            ><span class="ja">モチベーション</span>
+            <span class="en">Progress</span><span class="en">Fun</span
+            ><span class="en">Curiosity</span
+            ><span class="en">Communication</span
+            ><span class="en">Cultural understanding</span
+            ><span class="en">Motivation</span>
+          </div>
+        </div>
+        <div class="pines" aria-hidden="true">
+          <div>
+            <svg class="pn s" viewBox="0 0 24 40" aria-hidden="true">
+              <use href="#pine" /></svg
+            ><svg class="pn l" viewBox="0 0 24 40" aria-hidden="true">
+              <use href="#pine" />
+            </svg>
+          </div>
+          <div>
+            <svg class="pn m" viewBox="0 0 24 40" aria-hidden="true">
+              <use href="#pine" /></svg
+            ><svg class="pn s" viewBox="0 0 24 40" aria-hidden="true">
+              <use href="#pine" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark d1" id="reasons">
+        <div class="in">
+          <h2>
+            <span class="ja">選ばれる理由</span
+            ><span class="en">Why families choose us</span>
+          </h2>
+          <hr />
+          <p class="ja">
+            楽しく学び、英語を好きになってもらうために精一杯努力します。英語をコミュニケーションの道具として身につけ、世界に飛び出して、自分の世界を広げてください。
+          </p>
+          <p class="en">
+            We do everything we can to help students enjoy English and love
+            learning it. Use English as a tool to reach out to the world and
+            widen your own.
+          </p>
+          <div class="carwrap">
+            <div class="rail two">
+              <article class="gcard">
+                <div class="gimg">
+                  <a
+                    aria-label="Play video"
+                    class="photo play"
+                    data-video=""
+                    href="#"
+                    rel="noopener"
+                    target="_blank"
+                    ><img
+                      alt=""
+                      data-thumb=""
+                      height="400"
+                      loading="lazy"
+                      src="image1.png"
+                      width="640"
+                  /></a>
+                </div>
+                <div class="gtxt">
+                  <h3>
+                    <span class="ja">ビデオレター活動</span
+                    ><span class="en">Video letter exchange</span>
+                  </h3>
+                  <p class="ja">
+                    各クラスにイギリスの子供たちを1人ずつ割り当て、月1回、ビデオレターやビデオチャットで交流します。質問し合ったり、好きなものを紹介したり、日本語を教えたり。生きた英語と異文化に直接触れられます。
+                  </p>
+                  <p class="en">
+                    Each class is paired with a child in the UK. Once a month
+                    they swap video letters or chat on video, asking questions,
+                    sharing favourite things and even teaching each other some
+                    Japanese. It is real English and real cultural exchange.
+                  </p>
+                </div>
+              </article>
+              <article class="gcard">
+                <div class="gimg">
+                  <img
+                    src="image1.png"
+                    alt=""
+                    loading="lazy"
+                    width="640"
+                    height="480"
+                  />
+                </div>
+                <div class="gtxt">
+                  <h3>
+                    <span class="ja">ハイレベルなレッスン</span
+                    ><span class="en">High-level lessons</span>
+                  </h3>
+                  <p class="ja">
+                    19年の経験を生かしたカリキュラムで、ほとんどの生徒さんが1年以内に、同年代の中でもハイレベルな読み書きができるようになっています。利益より、生徒さんが楽しく続けて成長できることを大切にしています。
+                  </p>
+                  <p class="en">
+                    Our curriculum is built on 19 years of experience. Most
+                    students reach a high level of reading and writing for their
+                    age group within a year. We put students' enjoyment and
+                    growth ahead of profit.
+                  </p>
+                </div>
+              </article>
+              <article class="gcard">
+                <div class="gimg">
+                  <img
+                    src="image1.png"
+                    alt=""
+                    loading="lazy"
+                    width="640"
+                    height="480"
+                  />
+                </div>
+                <div class="gtxt">
+                  <h3>
+                    <span class="ja">自宅学習サポート</span
+                    ><span class="en">Home study support</span>
+                  </h3>
+                  <p class="ja">
+                    Adventure
+                    Islandの教材に沿った宿題ビデオ（220本以上）と講師録音の音声ファイルで、ご自宅でもしっかり復習できます。無料のゲームアプリもあります。
+                  </p>
+                  <p class="en">
+                    Over 220 homework videos that follow the Adventure Island
+                    books, plus audio recorded by the teacher, help students
+                    review at home. Free game apps are available too.
+                  </p>
+                </div>
+              </article>
+              <article class="gcard">
+                <div class="gimg">
+                  <img
+                    src="image1.png"
+                    alt=""
+                    loading="lazy"
+                    width="640"
+                    height="480"
+                  />
+                </div>
+                <div class="gtxt">
+                  <h3>
+                    <span class="ja">スクールイベント</span
+                    ><span class="en">School events</span>
+                  </h3>
+                  <p class="ja">
+                    ハロウィンパーティやクリスマスパーティなど、異文化に触れられるイベントを開催しています。今後はBBQパーティも計画中です。
+                  </p>
+                  <p class="en">
+                    Halloween and Christmas parties give students a taste of
+                    other cultures. We are planning new events such as a BBQ
+                    party.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <button class="nx" type="button" aria-label="Next">&#8250;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark d2" id="books">
+        <div class="in">
+          <h2>
+            <span class="ja">オリジナル教材 Adventure Island</span
+            ><span class="en">Our own textbooks: Adventure Island</span>
+          </h2>
+          <hr />
+          <p class="ja">
+            レッスンでは、グレイアム自身が作成したオリジナル教材シリーズ「Adventure
+            Island」を使います。ケビンとサミ、猫のチャーリーと一緒に、海・ジャングル・ビーチ・雪山・空を冒険しながら、Pre-A1からA2+まで英語の力を一歩ずつ伸ばします。
+          </p>
+          <p class="en">
+            Lessons use Adventure Island, a textbook series written by Graeme
+            himself. Students join Kevin, Sami and Charlie the cat on adventures
+            from the deep sea to the enchanted skies, building English step by
+            step from Pre-A1 to A2+.
+          </p>
+          <div class="chips">
+            <span class="ja">全9冊</span
+            ><span class="ja">宿題ビデオ220本以上</span
+            ><span class="ja">ゲームアプリ・歌・コミック</span
+            ><span class="en">9 books</span
+            ><span class="en">220+ homework videos</span
+            ><span class="en">Games, songs and comics</span>
+          </div>
+          <div class="carwrap">
+            <div class="rail">
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/cover.fs.jpg"
+                    alt="First Steps cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">Pre-A1</span>
+                  <h3>First Steps</h3>
+                  <p class="ja">英語のはじめの一歩</p>
+                  <p class="en">Your first steps in English</p>
+                  <div class="meta">
+                    <span class="ja">20ユニット・動画40本</span
+                    ><span class="en">20 units · 40 videos</span>
+                  </div>
+                </div>
+              </article>
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/cover1.jpg"
+                    alt="Adventure Island 1 cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">Pre-A1</span>
+                  <h3>Adventure Island 1</h3>
+                  <p class="ja">フォニックス・読み・入門英語</p>
+                  <p class="en">Phonics, reading and beginner English</p>
+                  <div class="meta">
+                    <span class="ja">34ユニット・動画45本</span
+                    ><span class="en">34 units · 45 videos</span>
+                  </div>
+                </div>
+              </article>
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/cover2.jpg"
+                    alt="Adventure Island 2 cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">Lower A1</span>
+                  <h3>Adventure Island 2</h3>
+                  <p class="ja">入門フレーズ・読み・書き</p>
+                  <p class="en">Beginner phrases, reading and writing</p>
+                  <div class="meta">
+                    <span class="ja">18ユニット・動画34本</span
+                    ><span class="en">18 units · 34 videos</span>
+                  </div>
+                </div>
+              </article>
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/cover2.jpg"
+                    alt="Adventure Island 3 cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">A1</span>
+                  <h3>Adventure Island 3</h3>
+                  <p class="ja">助動詞・現在形など</p>
+                  <p class="en">Modal verbs, present simple and more</p>
+                  <div class="meta">
+                    <span class="ja">18レッスン・動画34本</span
+                    ><span class="en">18 lessons · 34 videos</span>
+                  </div>
+                </div>
+              </article>
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/cover4.jpg"
+                    alt="Adventure Island 4 cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">Upper A1</span>
+                  <h3>Adventure Island 4</h3>
+                  <p class="ja">過去・現在・未来の時制など</p>
+                  <p class="en">Past, present and future tenses</p>
+                  <div class="meta">
+                    <span class="ja">18レッスン・動画34本</span
+                    ><span class="en">18 lessons · 34 videos</span>
+                  </div>
+                </div>
+              </article>
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/cover5.jpg"
+                    alt="Adventure Island 5 cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">Lower A2</span>
+                  <h3>Adventure Island 5</h3>
+                  <p class="ja">文法とライティング中心</p>
+                  <p class="en">Grammar and writing focus</p>
+                  <div class="meta">
+                    <span class="ja">18ユニット＋復習テスト2</span
+                    ><span class="en">18 units + 2 review tests</span>
+                  </div>
+                </div>
+              </article>
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/coverjhs.jpg"
+                    alt="Adventure Island JHS 1 cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">A2</span>
+                  <h3>Adventure Island JHS 1</h3>
+                  <p class="ja">スピーキング・リスニング・コミュニケーション</p>
+                  <p class="en">
+                    Essential speaking, listening and communication
+                  </p>
+                  <div class="meta">
+                    <span class="ja">スピーキング34・文法6ユニット</span
+                    ><span class="en">34 speaking + 6 grammar units</span>
+                  </div>
+                </div>
+              </article>
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/coverjhs2.jpg"
+                    alt="Adventure Island JHS 2 cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">Upper A2</span>
+                  <h3>Adventure Island JHS 2</h3>
+                  <p class="ja">上級スピーキング・コミュニケーション</p>
+                  <p class="en">Advanced speaking and communication</p>
+                  <div class="meta">
+                    <span class="ja">スピーキング34・文法6ユニット</span
+                    ><span class="en">34 speaking + 6 grammar units</span>
+                  </div>
+                </div>
+              </article>
+              <article class="gcard bk">
+                <div class="gimg">
+                  <img
+                    src="images/coveradult.jpg"
+                    alt="Speaking Adventure cover"
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                  />
+                </div>
+                <div class="gtxt">
+                  <span class="lvl">Adults</span>
+                  <h3>Speaking Adventure</h3>
+                  <p class="ja">大人のためのコミュニケーション</p>
+                  <p class="en">Communication skills for adults</p>
+                  <div class="meta">
+                    <span class="ja">40ユニット</span
+                    ><span class="en">40 units</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <button class="nx" type="button" aria-label="Next">&#8250;</button>
+          </div>
+          <a
+            class="btn red"
+            href="https://adventureislandesl.com"
+            rel="noopener"
+            target="_blank"
+            ><span class="ja">Adventure Island 公式サイトを見る</span
+            ><span class="en">Visit the Adventure Island website</span></a
+          >
+        </div>
+      </section>
+
+      <section class="dark d3" id="prices">
+        <div class="in">
+          <h2>
+            <span class="ja">レッスン料</span><span class="en">Prices</span>
+          </h2>
+          <hr />
+          <div class="pcols">
+            <div>
+              <h3>
+                <span class="ja">グループレッスン</span
+                ><span class="en">Group lessons</span>
+              </h3>
+              <div class="plan">
+                <div>
+                  <b class="ja">未就学児（3歳〜）</b
+                  ><b class="en">Preschool (age 3+)</b
+                  ><small class="ja">40分／フォニックス・読み・語彙・会話</small
+                  ><small class="en"
+                    >40 min / phonics, reading, vocabulary, speaking</small
+                  >
+                </div>
+                <div class="yen">
+                  ¥6,500<small class="ja">／月</small
+                  ><small class="en">/ month</small>
+                </div>
+              </div>
+              <div class="plan">
+                <div>
+                  <b class="ja">小学生</b><b class="en">Elementary school</b
+                  ><small class="ja">50分／読み・書き・会話</small
+                  ><small class="en">50 min / reading, writing, speaking</small>
+                </div>
+                <div class="yen">
+                  ¥7,300<small class="ja">／月</small
+                  ><small class="en">/ month</small>
+                </div>
+              </div>
+              <div class="plan">
+                <div>
+                  <b class="ja">中学生 英会話＋文法</b
+                  ><b class="en">Junior high: conversation + grammar</b
+                  ><small class="ja"
+                    >50分／ネイティブ講師の会話と日本人講師の文法</small
+                  ><small class="en"
+                    >50 min / native teacher for speaking, Japanese teacher for
+                    grammar</small
+                  >
+                </div>
+                <div class="yen">
+                  ¥7,800<small class="ja">／月</small
+                  ><small class="en">/ month</small>
+                </div>
+              </div>
+              <div class="plan">
+                <div>
+                  <b class="ja">高校生以上</b
+                  ><b class="en">High school and adults</b
+                  ><small class="ja"
+                    >50分／ネイティブ講師の会話と日本人講師の文法</small
+                  ><small class="en"
+                    >50 min / native teacher for speaking, Japanese teacher for
+                    grammar</small
+                  >
+                </div>
+                <div class="yen">
+                  ¥7,800<small class="ja">／月</small
+                  ><small class="en">/ month</small>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3>
+                <span class="ja">プライベート</span
+                ><span class="en">Private lessons</span>
+              </h3>
+              <div class="plan">
+                <div>
+                  <b class="ja">プライベート</b><b class="en">Private lessons</b
+                  ><small class="ja"
+                    >55分／ご自身の課題に合わせた個別レッスン</small
+                  ><small class="en">55 min / tailored to your own goals</small>
+                </div>
+                <div class="yen">
+                  ¥16,000<small class="ja">／3回</small
+                  ><small class="en">/ 3 lessons</small>
+                </div>
+              </div>
+              <h3>
+                <span class="ja">レッスンについて</span
+                ><span class="en">Lesson information</span>
+              </h3>
+              <ul class="notes">
+                <li class="ja">1クラス最大6人の少人数制グループレッスン</li>
+                <li class="en">Small group lessons with up to 6 students</li>
+                <li class="ja">年間42レッスン（12カ月）</li>
+                <li class="en">42 lessons per year (12 months)</li>
+                <li class="ja">入会費・退会費0円。年間契約もありません</li>
+                <li class="en">
+                  No joining or leaving fees, and no yearly contract
+                </li>
+                <li class="ja">お休みした場合は振替OK</li>
+                <li class="en">Make-up lessons for missed classes</li>
+                <li class="ja">
+                  台風や大雪で休校の場合は、振替またはオンラインレッスンに切り替えます
+                </li>
+                <li class="en">
+                  If we close for a typhoon or heavy snow, the lesson is
+                  rescheduled or held online
+                </li>
+              </ul>
+              <div class="pfoot">
+                <p class="ja">
+                  ※オリジナル教材「Adventure Island」の教材費は別途かかります。
+                </p>
+                <p class="en">
+                  * Adventure Island textbooks are charged separately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark d2" id="staff">
+        <div class="in">
+          <h2>
+            <span class="ja">スタッフ紹介</span
+            ><span class="en">Meet our staff</span>
+          </h2>
+          <hr />
+          <div class="carwrap">
+            <div class="rail">
+              <article class="gcard st">
+                <div class="gimg">
+                  <img
+                    src="image1.png"
+                    alt="Graeme Cattermole"
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                  />
+                </div>
+                <div class="gtxt">
+                  <h3>Graeme Cattermole</h3>
+                  <div class="role">
+                    <span class="ja">オーナー・講師</span
+                    ><span class="en">Owner, Teacher</span>
+                  </div>
+                  <p class="ja">
+                    2005年に来日し福岡在住。英語教育に目覚めて以来19年間、英会話スクール、保育園、幼稚園、小学校、福岡日英協会、一般企業などで幼児から大人まで指導。TESOL・TEFL資格を持ち、スピーキングテストの試験官も務めています。留学や海外赴任を実現した生徒さんも多数。あなたの目標達成をお手伝いします。
+                  </p>
+                  <p class="en">
+                    Graeme moved to Japan in 2005 and lives in Fukuoka. For 19
+                    years he has taught everyone from toddlers to adults at
+                    language schools, nurseries, kindergartens, elementary
+                    schools, the Fukuoka Japan-Britain Association and
+                    companies. He holds TESOL and TEFL qualifications and is a
+                    speaking test examiner. Many of his students have studied or
+                    worked abroad.
+                  </p>
+                </div>
+              </article>
+              <article class="gcard st">
+                <div class="gimg">
+                  <img
+                    src="image1.png"
+                    alt="Yohmi Matsuoka"
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                  />
+                </div>
+                <div class="gtxt">
+                  <h3>Yohmi Matsuoka</h3>
+                  <div class="role">
+                    <span class="ja">講師</span><span class="en">Teacher</span>
+                  </div>
+                  <p class="ja">
+                    短大在学中にアメリカ・オレゴン州に1年留学。卒業後はカナダ・バンクーバーでワーキングホリデーを経験し、北米で計3年ほど生活しました。児童英語教育に携わって10年。コミュニケーションの楽しさを子どもたちに伝えています。Let's
+                    have fun together!
+                  </p>
+                  <p class="en">
+                    Yohmi spent a year studying in Oregon, USA, and later worked
+                    in Vancouver, Canada on a working holiday, living in North
+                    America for about three years. She has taught children's
+                    English for 10 years and loves sharing the joy of
+                    communication. Let's have fun together!
+                  </p>
+                </div>
+              </article>
+              <article class="gcard st">
+                <div class="gimg">
+                  <img
+                    src="image1.png"
+                    alt="Junko Cattermole"
+                    loading="lazy"
+                    width="400"
+                    height="400"
+                  />
+                </div>
+                <div class="gtxt">
+                  <h3>Junko Cattermole</h3>
+                  <div class="role">
+                    <span class="ja">オーナー・マネージャー</span
+                    ><span class="en">Owner, Manager</span>
+                  </div>
+                  <p class="ja">
+                    小学3年生から大学卒業まで英会話スクールで学び、オーストラリアに1年間滞在しました。レッスンに関するご相談は日本語で承っています。英語を楽しく身につけるお手伝いをします。
+                  </p>
+                  <p class="en">
+                    Junko studied at English conversation schools from the 3rd
+                    grade through university and spent a year living in
+                    Australia. She is happy to answer any questions about
+                    lessons in Japanese.
+                  </p>
+                </div>
+              </article>
+            </div>
+            <button class="nx" type="button" aria-label="Next">&#8250;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark d1" id="videos">
+        <div class="in">
+          <h2><span class="ja">ビデオ</span><span class="en">Videos</span></h2>
+          <hr />
+          <p class="ja">生徒さんやイギリスの友達の様子をご覧ください。</p>
+          <p class="en">
+            See our students and our friends in the UK in action.
+          </p>
+          <div class="carwrap">
+            <div class="rail">
+              <a
+                class="gcard vid"
+                href="#"
+                data-video
+                target="_blank"
+                rel="noopener"
+                ><div class="gimg thumb">
+                  <img data-thumb src="image1.png" alt="" loading="lazy" />
+                </div>
+                <div class="gtxt">
+                  <b>Graeme Introduction</b
+                  ><span class="ja">私と私のスクール</span
+                  ><span class="en">Me and my school</span>
+                </div></a
+              ><a
+                class="gcard vid"
+                href="#"
+                data-video
+                target="_blank"
+                rel="noopener"
+                ><div class="gimg thumb">
+                  <img data-thumb src="image1.png" alt="" loading="lazy" />
+                </div>
+                <div class="gtxt">
+                  <b>Sylvie</b
+                  ><span class="ja">イギリスの友達の好きなチョコレート</span
+                  ><span class="en"
+                    >Our British friend talks about her favourite
+                    chocolate</span
+                  >
+                </div></a
+              ><a
+                class="gcard vid"
+                href="#"
+                data-video
+                target="_blank"
+                rel="noopener"
+                ><div class="gimg thumb">
+                  <img data-thumb src="image1.png" alt="" loading="lazy" />
+                </div>
+                <div class="gtxt">
+                  <b>Kouta</b><span class="ja">生徒の好きなお菓子</span
+                  ><span class="en"
+                    >Our student talks about his favourite snack</span
+                  >
+                </div></a
+              ><a
+                class="gcard vid"
+                href="#"
+                data-video
+                target="_blank"
+                rel="noopener"
+                ><div class="gimg thumb">
+                  <img data-thumb src="image1.png" alt="" loading="lazy" />
+                </div>
+                <div class="gtxt">
+                  <b>Homework video</b><span class="ja">宿題ビデオの例</span
+                  ><span class="en">An example of our homework</span>
+                </div></a
+              ><a
+                class="gcard vid"
+                href="#"
+                data-video
+                target="_blank"
+                rel="noopener"
+                ><div class="gimg thumb">
+                  <img data-thumb src="image1.png" alt="" loading="lazy" />
+                </div>
+                <div class="gtxt">
+                  <b>Asuna</b><span class="ja">年長のAsunaさんの絵本の音読</span
+                  ><span class="en"
+                    >Asuna reads stories in her final year of kindergarten</span
+                  >
+                </div></a
+              ><a
+                class="gcard vid"
+                href="#"
+                data-video
+                target="_blank"
+                rel="noopener"
+                ><div class="gimg thumb">
+                  <img data-thumb src="image1.png" alt="" loading="lazy" />
+                </div>
+                <div class="gtxt">
+                  <b>English Diary</b><span class="ja">Samiさんの英語日記</span
+                  ><span class="en">Sami reads from her diary</span>
+                </div></a
+              >
+            </div>
+            <button class="nx" type="button" aria-label="Next">&#8250;</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <a class="obtn" href="#contact"
+          ><span class="ja">無料体験・お問い合わせはこちら</span
+          ><span class="en">Book a free trial lesson</span></a
+        >
+      </section>
+    </main>
+
+    <footer class="sky" id="contact">
+      <div class="pines" aria-hidden="true">
+        <div>
+          <svg class="pn s" viewBox="0 0 24 40" aria-hidden="true">
+            <use href="#pine" /></svg
+          ><svg class="pn l" viewBox="0 0 24 40" aria-hidden="true">
+            <use href="#pine" />
+          </svg>
+        </div>
+        <div>
+          <svg class="pn m" viewBox="0 0 24 40" aria-hidden="true">
+            <use href="#pine" /></svg
+          ><svg class="pn s" viewBox="0 0 24 40" aria-hidden="true">
+            <use href="#pine" />
+          </svg>
+        </div>
+      </div>
+      <div class="in">
+        <h2>
+          <span class="ja">お問い合わせ・無料体験</span
+          ><span class="en">Contact and free trial</span>
+        </h2>
+        <hr class="rule" />
+        <p class="ja">お気軽にご連絡ください。ご相談は日本語でもOKです。</p>
+        <p class="en">
+          Get in touch any time. We are happy to help in English or Japanese.
+        </p>
+        <div class="contact">
+          <a class="btn red" href="tel:09028554344">090-2855-4344</a>
+          <a class="btn line" href="https://line.me/ti/p/~YOUR_LINE_ID"
+            >LINE: YOUR_LINE_ID</a
+          >
+          <a class="btn dark" href="mailto:graemesworldenglish@gmail.com"
+            >graemesworldenglish@gmail.com</a
+          >
+        </div>
+        <div class="addr">
+          <p class="ja">
+            <b>住所</b><br />〒814-0165 福岡県福岡市早良区次郎丸4丁目5-69<br />プラスコード:
+            G8XH+VQ 福岡
+          </p>
+          <p class="en">
+            <b>Address</b><br />4 Chome-5-69 Jiromaru, Sawara Ward, Fukuoka
+            814-0165<br />Plus Code: G8XH+VQ Fukuoka
+          </p>
+        </div>
+        <iframe
+          class="map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=G8XH%2BVQ+Fukuoka&amp;output=embed"
+          title="Map"
+        ></iframe>
+        <nav class="fnav" aria-label="Footer">
+          <a href="#top"
+            ><span class="ja">ホーム</span><span class="en">Home</span></a
+          ><a href="#about"
+            ><span class="ja">スクール紹介</span
+            ><span class="en">About</span></a
+          ><a href="#reasons"
+            ><span class="ja">選ばれる理由</span
+            ><span class="en">Why us</span></a
+          ><a href="#books"
+            ><span class="ja">教材</span><span class="en">Textbooks</span></a
+          ><a href="#prices"
+            ><span class="ja">レッスン料</span><span class="en">Prices</span></a
+          ><a href="#staff"
+            ><span class="ja">スタッフ</span><span class="en">Staff</span></a
+          ><a href="#videos"
+            ><span class="ja">ビデオ</span><span class="en">Videos</span></a
+          ><a href="#contact"
+            ><span class="ja">お問い合わせ</span
+            ><span class="en">Contact</span></a
+          >
+        </nav>
+        <div class="frow">
+          <span class="seal" aria-hidden="true"
+            ><b>世</b><b>界</b><b>英</b><b>語</b></span
+          ><span>Graeme's World English</span
+          ><a
+            class="ai"
+            href="https://adventureislandesl.com"
+            target="_blank"
+            rel="noopener"
+            ><b>島</b>Adventure Island</a
+          >
+        </div>
+        <button class="langbtn" type="button" aria-label="Switch language">
+          English
+        </button>
+        <p class="copy">
+          © Graeme's World English  | 
+          <a
+            href="https://adventureislandesl.com"
+            rel="noopener"
+            target="_blank"
+            >adventureislandesl.com</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <a class="fab" href="tel:09028554344" aria-label="Call"
+      ><svg viewBox="0 0 24 24">
+        <path
+          d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"
+        /></svg
+    ></a>
+
+    <dialog aria-label="Video" id="vmodal">
+      <div class="top">
+        <button aria-label="Close" class="x" id="vclose" type="button">
+          × <span class="ja">閉じる</span><span class="en">Close</span>
+        </button>
+      </div>
+      <div id="vframe"></div>
+    </dialog>
+
+    <script>
+      (function () {
+        /* ONE video for every video slot while testing. Change these three lines later. */
+        var VIDEO = {
+          embed:
+            "https://player.mediadelivery.net/embed/783587/61aa9abb-3e33-48e2-90c0-c709271eb3b7",
+          play: "https://player.mediadelivery.net/play/783587/61aa9abb-3e33-48e2-90c0-c709271eb3b7",
+          thumb:
+            "https://vz-781d0a4d-ef9.b-cdn.net/61aa9abb-3e33-48e2-90c0-c709271eb3b7/thumbnail.jpg",
+        };
+
+        var m = document.getElementById("vmodal"),
+          f = document.getElementById("vframe");
+        document.querySelectorAll("img[data-thumb]").forEach(function (i) {
+          i.src = VIDEO.thumb;
+        });
+        document.querySelectorAll("a[data-video]").forEach(function (a) {
+          a.href = VIDEO.play;
+          a.addEventListener("click", function (e) {
+            e.preventDefault();
+            f.innerHTML =
+              '<iframe src="' +
+              VIDEO.embed +
+              '?autoplay=true&preload=true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen title="Video"></iframe>';
+            if (m.showModal) {
+              m.showModal();
+            } else {
+              m.setAttribute("open", "");
+            }
+          });
+        });
+        function stop() {
+          f.innerHTML = "";
+        }
+        document
+          .getElementById("vclose")
+          .addEventListener("click", function () {
+            m.close ? m.close() : m.removeAttribute("open");
+            stop();
+          });
+        m.addEventListener("close", stop);
+        m.addEventListener("click", function (e) {
+          if (e.target === m) {
+            m.close();
+            stop();
+          }
+        });
+
+        var b = document.body,
+          btns = document.querySelectorAll(".langbtn");
+        function setLang(l) {
+          b.setAttribute("data-lang", l);
+          document.documentElement.lang = l;
+          btns.forEach(function (x) {
+            x.textContent = l === "ja" ? "English" : "日本語";
+          });
+          try {
+            localStorage.setItem("gwe-lang", l);
+          } catch (e) {}
+        }
+        var saved = null;
+        try {
+          saved = localStorage.getItem("gwe-lang");
+        } catch (e) {}
+        setLang(saved === "en" ? "en" : "ja");
+        btns.forEach(function (x) {
+          x.addEventListener("click", function () {
+            setLang(b.getAttribute("data-lang") === "ja" ? "en" : "ja");
+          });
+        });
+
+        var menu = document.getElementById("menu"),
+          burger = document.getElementById("burger");
+        function openM(o) {
+          menu.classList.toggle("open", o);
+          burger.setAttribute("aria-expanded", o ? "true" : "false");
+          b.style.overflow = o ? "hidden" : "";
+        }
+        burger.addEventListener("click", function () {
+          openM(true);
+        });
+        document
+          .getElementById("mclose")
+          .addEventListener("click", function () {
+            openM(false);
+          });
+        menu.querySelectorAll("nav a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            openM(false);
+          });
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") openM(false);
+        });
+
+        document.querySelectorAll(".carwrap").forEach(function (w) {
+          var r = w.querySelector(".rail"),
+            n = w.querySelector(".nx");
+          n.addEventListener("click", function () {
+            var end = r.scrollLeft + r.clientWidth >= r.scrollWidth - 8;
+            r.scrollTo({
+              left: end ? 0 : r.scrollLeft + r.clientWidth * 0.8,
+              behavior: "smooth",
+            });
+          });
+        });
+
+        if ("IntersectionObserver" in window) {
+          var links = document.querySelectorAll(".menu nav a");
+          var io = new IntersectionObserver(
+            function (es) {
+              es.forEach(function (e) {
+                if (e.isIntersecting) {
+                  links.forEach(function (a) {
+                    a.classList.toggle(
+                      "cur",
+                      a.getAttribute("href") === "#" + e.target.id,
+                    );
+                  });
+                }
+              });
+            },
+            { rootMargin: "-40% 0px -55% 0px" },
+          );
+          document
+            .querySelectorAll("main section[id],footer[id]")
+            .forEach(function (s) {
+              io.observe(s);
+            });
+        }
+      })();
+    </script>
+  </body>
+</html>

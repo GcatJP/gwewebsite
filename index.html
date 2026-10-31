@@ -17,6 +17,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Raleway:wght@300;400;600&display=swap"
     />
+    <link rel="icon" href="images/logo.png" />
     <style>
       :root {
         --seal: #a12b1f;
@@ -74,7 +75,11 @@
         width: 0;
         height: 0;
       }
-
+      .logo-lg {
+        width: min(260px, 70vw);
+        height: auto;
+        margin: 0 auto 1.4rem;
+      }
       /* header */
       .top {
         position: sticky;
@@ -250,9 +255,10 @@
           linear-gradient(rgba(60, 100, 170, 0.3), rgba(0, 0, 0, 0.08)),
           url(images/main.jpg) 50% 30% / cover #8fa8c9;
         display: flex;
-        justify-content: center;
-        text-align: center;
-        padding: 2rem 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        padding: 2rem 2.5rem;
       }
       .hero p {
         color: rgba(255, 255, 255, 0.92);
@@ -272,7 +278,7 @@
       @media (min-width: 900px) {
         .hero {
           min-height: 340px;
-          align-items: center;
+          align-items: flex-start;
         }
         .hero p {
           font-size: 1.4rem;
@@ -290,6 +296,7 @@
         max-width: 640px;
         margin: 0 auto;
       }
+
       .band h1 {
         font-size: clamp(1.8rem, 6.5vw, 2.7rem);
       }
@@ -748,6 +755,24 @@
         word-break: break-all;
         padding: 0.3rem 1rem;
       }
+      .contact .btn.line {
+        background: #06c755;
+        border-color: #06c755;
+        color: #fff;
+        gap: 0.8rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.08em;
+      }
+      .contact .btn.line:hover {
+        background: #05b04c;
+        border-color: #05b04c;
+      }
+      .contact .btn.line .lico {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+        flex: none;
+      }
       .contact .btn.red {
         background: var(--ink);
         color: #fff;
@@ -835,7 +860,12 @@
         height: 26px;
         fill: #fff;
       }
-
+      .logo-sm {
+        flex: none;
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+      }
       #vmodal {
         border: 0;
         padding: 0;
@@ -898,9 +928,13 @@
 
     <header class="top" id="top">
       <a class="brand" href="#top"
-        ><span class="seal" aria-hidden="true"
-          ><b>世</b><b>界</b><b>英</b><b>語</b></span
-        ><span
+        ><img
+          class="logo-sm"
+          src="images/logo.png"
+          alt=""
+          width="56"
+          height="56"
+        /><span
           ><span class="wm">Graeme's World English<small>英会話</small></span
           ><span class="sub"
             ><span class="ja">福岡の英会話スクール</span
@@ -987,9 +1021,16 @@
 
       <section class="band" id="about">
         <div class="bin">
+          <img
+            class="logo-lg"
+            src="images/logo.png"
+            alt="Graeme's World English logo"
+            width="260"
+            height="258"
+          />
           <h1>
             <span class="ja">英語で、世界とつながる。</span
-            ><span class="en">Learn English. Connect with the world.</span>
+            ><span class="en">Learn English.<br />Connect with the world.</span>
           </h1>
           <hr class="rule" />
           <p>
@@ -1113,7 +1154,7 @@
                       data-thumb=""
                       height="400"
                       loading="lazy"
-                      src="image1.png"
+                      src="images/overseas.jpg"
                       width="640"
                   /></a>
                 </div>
@@ -1136,7 +1177,7 @@
               <article class="gcard">
                 <div class="gimg">
                   <img
-                    src="image1.png"
+                    src="images/masks.jpg"
                     alt=""
                     loading="lazy"
                     width="640"
@@ -1162,7 +1203,7 @@
               <article class="gcard">
                 <div class="gimg">
                   <img
-                    src="image1.png"
+                    src="images/video.jpg"
                     alt=""
                     loading="lazy"
                     width="640"
@@ -1188,7 +1229,7 @@
               <article class="gcard">
                 <div class="gimg">
                   <img
-                    src="image1.png"
+                    src="images/santa.jpg"
                     alt=""
                     loading="lazy"
                     width="640"
@@ -1309,7 +1350,7 @@
               <article class="gcard bk">
                 <div class="gimg">
                   <img
-                    src="images/cover2.jpg"
+                    src="images/cover3.jpg"
                     alt="Adventure Island 3 cover"
                     loading="lazy"
                     width="300"
@@ -1583,7 +1624,7 @@
               <article class="gcard st">
                 <div class="gimg">
                   <img
-                    src="image1.png"
+                    src="images/graeme.jpg"
                     alt="Graeme Cattermole"
                     loading="lazy"
                     width="400"
@@ -1613,7 +1654,7 @@
               <article class="gcard st">
                 <div class="gimg">
                   <img
-                    src="image1.png"
+                    src="images/Yohmi.jpg"
                     alt="Yohmi Matsuoka"
                     loading="lazy"
                     width="400"
@@ -1641,7 +1682,7 @@
               <article class="gcard st">
                 <div class="gimg">
                   <img
-                    src="image1.png"
+                    src="images/junko.jpg"
                     alt="Junko Cattermole"
                     loading="lazy"
                     width="400"
@@ -1812,10 +1853,25 @@
         </p>
         <div class="contact">
           <a class="btn red" href="tel:09028554344">090-2855-4344</a>
-          <a class="btn line" href="https://line.me/ti/p/~YOUR_LINE_ID"
-            >LINE: YOUR_LINE_ID</a
+          <a
+            class="btn line"
+            href="https://line.me/ti/p/6g0QSSUJ93"
+            aria-label="LINE"
           >
-          <a class="btn dark" href="mailto:graemesworldenglish@gmail.com"
+            <svg class="lico" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2C6.5 2 2 5.6 2 10c0 2.6 1.6 4.9 4 6.4-.1.9-.5 2.4-1.5 3.6 0 0 2.7-.3 4.8-1.9.9.2 1.7.3 2.7.3 5.5 0 10-3.6 10-8.4S17.5 2 12 2z"
+              />
+            </svg>
+            <span>LINE</span>
+            <svg class="lico" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2C6.5 2 2 5.6 2 10c0 2.6 1.6 4.9 4 6.4-.1.9-.5 2.4-1.5 3.6 0 0 2.7-.3 4.8-1.9.9.2 1.7.3 2.7.3 5.5 0 10-3.6 10-8.4S17.5 2 12 2z"
+              />
+            </svg>
+          </a>
+
+          <a class="btn" href="mailto:graemesworldenglish@gmail.com"
             >graemesworldenglish@gmail.com</a
           >
         </div>
@@ -1859,10 +1915,14 @@
           >
         </nav>
         <div class="frow">
-          <span class="seal" aria-hidden="true"
-            ><b>世</b><b>界</b><b>英</b><b>語</b></span
-          ><span>Graeme's World English</span
-          ><a
+          <img
+            class="logo-sm"
+            src="images/logo.png"
+            alt=""
+            width="56"
+            height="56"
+          />
+          <a
             class="ai"
             href="https://adventureislandesl.com"
             target="_blank"
@@ -1902,136 +1962,148 @@
     </dialog>
 
     <script>
-      (function () {
-        /* ONE video for every video slot while testing. Change these three lines later. */
-        var VIDEO = {
-          embed:
-            "https://player.mediadelivery.net/embed/783587/61aa9abb-3e33-48e2-90c0-c709271eb3b7",
-          play: "https://player.mediadelivery.net/play/783587/61aa9abb-3e33-48e2-90c0-c709271eb3b7",
-          thumb:
-            "https://vz-781d0a4d-ef9.b-cdn.net/61aa9abb-3e33-48e2-90c0-c709271eb3b7/thumbnail.jpg",
-        };
+      /* Paste the Direct Play URL for each video, in page order. */
+      var LIST = [
+        "https://player.mediadelivery.net/play/783587/61aa9abb-3e33-48e2-90c0-c709271eb3b7" /* 1 video letter */,
+        "https://player.mediadelivery.net/play/783587/bc176042-e2d3-4d08-beb2-4e5308ac2206" /* 2 Graeme intro */,
+        "https://player.mediadelivery.net/play/783587/81283af4-1804-4aa2-9ffc-4f9c3219a3f6" /* 3 Sylvie */,
+        "https://player.mediadelivery.net/play/783587/70321036-7213-40e6-82ea-9ad936ab6141" /* 4 Kouta */,
+        "https://player.mediadelivery.net/play/582514/32e878eb-2504-4b32-9f02-cb8304034086" /* 5 homework */,
+        "https://player.mediadelivery.net/play/783587/fb25dd07-c441-4cf4-81b1-665191b021b2" /* 6 Asuna */,
+        "https://player.mediadelivery.net/play/783587/61aa9abb-3e33-48e2-90c0-c709271eb3b7" /* 7 diary */,
+      ];
 
-        var m = document.getElementById("vmodal"),
-          f = document.getElementById("vframe");
-        document.querySelectorAll("img[data-thumb]").forEach(function (i) {
-          i.src = VIDEO.thumb;
-        });
-        document.querySelectorAll("a[data-video]").forEach(function (a) {
-          a.href = VIDEO.play;
-          a.addEventListener("click", function (e) {
-            e.preventDefault();
-            f.innerHTML =
-              '<iframe src="' +
-              VIDEO.embed +
-              '?autoplay=true&preload=true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen title="Video"></iframe>';
-            if (m.showModal) {
-              m.showModal();
-            } else {
-              m.setAttribute("open", "");
-            }
-          });
-        });
-        function stop() {
-          f.innerHTML = "";
+      /* CDN hostname for each library ID (needed for thumbnails). */
+      var CDN = {
+        783587: "vz-781d0a4d-ef9.b-cdn.net",
+        582514: "vz-a8649393-404.b-cdn.net",
+      };
+
+      var m = document.getElementById("vmodal"),
+        f = document.getElementById("vframe");
+
+      document.querySelectorAll("a[data-video]").forEach(function (a, i) {
+        var u = LIST[i];
+        if (!u) return;
+        var p = u.match(/\/(?:play|embed)\/(\d+)\/([0-9a-fA-F-]+)/);
+        if (!p) return;
+        var lib = p[1],
+          id = p[2];
+        a.href = u;
+        var img = a.querySelector("img[data-thumb]");
+        if (img && CDN[lib]) {
+          img.src = "https://" + CDN[lib] + "/" + id + "/thumbnail.jpg";
         }
-        document
-          .getElementById("vclose")
-          .addEventListener("click", function () {
-            m.close ? m.close() : m.removeAttribute("open");
-            stop();
-          });
-        m.addEventListener("close", stop);
-        m.addEventListener("click", function (e) {
-          if (e.target === m) {
-            m.close();
-            stop();
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          f.innerHTML =
+            '<iframe src="https://player.mediadelivery.net/embed/' +
+            lib +
+            "/" +
+            id +
+            '?autoplay=true&preload=true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen" allowfullscreen title="Video"></iframe>';
+          if (m.showModal) {
+            m.showModal();
+          } else {
+            m.setAttribute("open", "");
           }
         });
-
-        var b = document.body,
-          btns = document.querySelectorAll(".langbtn");
-        function setLang(l) {
-          b.setAttribute("data-lang", l);
-          document.documentElement.lang = l;
-          btns.forEach(function (x) {
-            x.textContent = l === "ja" ? "English" : "日本語";
-          });
-          try {
-            localStorage.setItem("gwe-lang", l);
-          } catch (e) {}
+      });
+      function stop() {
+        f.innerHTML = "";
+      }
+      document.getElementById("vclose").addEventListener("click", function () {
+        m.close ? m.close() : m.removeAttribute("open");
+        stop();
+      });
+      m.addEventListener("close", stop);
+      m.addEventListener("click", function (e) {
+        if (e.target === m) {
+          m.close();
+          stop();
         }
-        var saved = null;
-        try {
-          saved = localStorage.getItem("gwe-lang");
-        } catch (e) {}
-        setLang(saved === "en" ? "en" : "ja");
+      });
+
+      var b = document.body,
+        btns = document.querySelectorAll(".langbtn");
+      function setLang(l) {
+        b.setAttribute("data-lang", l);
+        document.documentElement.lang = l;
         btns.forEach(function (x) {
-          x.addEventListener("click", function () {
-            setLang(b.getAttribute("data-lang") === "ja" ? "en" : "ja");
+          x.textContent = l === "ja" ? "English" : "日本語";
+        });
+        try {
+          localStorage.setItem("gwe-lang", l);
+        } catch (e) {}
+      }
+      var saved = null;
+      try {
+        saved = localStorage.getItem("gwe-lang");
+      } catch (e) {}
+      setLang(saved === "en" ? "en" : "ja");
+      btns.forEach(function (x) {
+        x.addEventListener("click", function () {
+          setLang(b.getAttribute("data-lang") === "ja" ? "en" : "ja");
+        });
+      });
+
+      var menu = document.getElementById("menu"),
+        burger = document.getElementById("burger");
+      function openM(o) {
+        menu.classList.toggle("open", o);
+        burger.setAttribute("aria-expanded", o ? "true" : "false");
+        b.style.overflow = o ? "hidden" : "";
+      }
+      burger.addEventListener("click", function () {
+        openM(true);
+      });
+      document.getElementById("mclose").addEventListener("click", function () {
+        openM(false);
+      });
+      menu.querySelectorAll("nav a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          openM(false);
+        });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") openM(false);
+      });
+
+      document.querySelectorAll(".carwrap").forEach(function (w) {
+        var r = w.querySelector(".rail"),
+          n = w.querySelector(".nx");
+        n.addEventListener("click", function () {
+          var end = r.scrollLeft + r.clientWidth >= r.scrollWidth - 8;
+          r.scrollTo({
+            left: end ? 0 : r.scrollLeft + r.clientWidth * 0.8,
+            behavior: "smooth",
           });
         });
+      });
 
-        var menu = document.getElementById("menu"),
-          burger = document.getElementById("burger");
-        function openM(o) {
-          menu.classList.toggle("open", o);
-          burger.setAttribute("aria-expanded", o ? "true" : "false");
-          b.style.overflow = o ? "hidden" : "";
-        }
-        burger.addEventListener("click", function () {
-          openM(true);
-        });
+      if ("IntersectionObserver" in window) {
+        var links = document.querySelectorAll(".menu nav a");
+        var io = new IntersectionObserver(
+          function (es) {
+            es.forEach(function (e) {
+              if (e.isIntersecting) {
+                links.forEach(function (a) {
+                  a.classList.toggle(
+                    "cur",
+                    a.getAttribute("href") === "#" + e.target.id,
+                  );
+                });
+              }
+            });
+          },
+          { rootMargin: "-40% 0px -55% 0px" },
+        );
         document
-          .getElementById("mclose")
-          .addEventListener("click", function () {
-            openM(false);
+          .querySelectorAll("main section[id],footer[id]")
+          .forEach(function (s) {
+            io.observe(s);
           });
-        menu.querySelectorAll("nav a").forEach(function (a) {
-          a.addEventListener("click", function () {
-            openM(false);
-          });
-        });
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape") openM(false);
-        });
-
-        document.querySelectorAll(".carwrap").forEach(function (w) {
-          var r = w.querySelector(".rail"),
-            n = w.querySelector(".nx");
-          n.addEventListener("click", function () {
-            var end = r.scrollLeft + r.clientWidth >= r.scrollWidth - 8;
-            r.scrollTo({
-              left: end ? 0 : r.scrollLeft + r.clientWidth * 0.8,
-              behavior: "smooth",
-            });
-          });
-        });
-
-        if ("IntersectionObserver" in window) {
-          var links = document.querySelectorAll(".menu nav a");
-          var io = new IntersectionObserver(
-            function (es) {
-              es.forEach(function (e) {
-                if (e.isIntersecting) {
-                  links.forEach(function (a) {
-                    a.classList.toggle(
-                      "cur",
-                      a.getAttribute("href") === "#" + e.target.id,
-                    );
-                  });
-                }
-              });
-            },
-            { rootMargin: "-40% 0px -55% 0px" },
-          );
-          document
-            .querySelectorAll("main section[id],footer[id]")
-            .forEach(function (s) {
-              io.observe(s);
-            });
-        }
-      })();
+      }
     </script>
   </body>
 </html>
